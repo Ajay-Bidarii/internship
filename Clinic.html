@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Itahari Government Hospital</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="Clinic.css" />
+
+  <!-- Internal CSS for specific page-level overrides -->
+  <style>
+    /* Hero section background gradient */
+    .hero {
+      background: linear-gradient(135deg, #003f7f 0%, #0077cc 60%, #00b894 100%);
+    }
+
+    /* Bima highlight section */
+    .bima-section {
+      background: linear-gradient(120deg, #e8f5e9 0%, #b2dfdb 100%);
+      border-left: 6px solid #00897b;
+    }
+
+    /* Token card receipt style */
+    .token-card {
+      background: #fff;
+      border: 2px solid #0077cc;
+      border-radius: 12px;
+      padding: 28px 32px;
+      max-width: 420px;
+      box-shadow: 0 6px 24px rgba(0, 119, 204, 0.13);
+      margin: 28px auto 0;
+    }
+
+    .token-card h3 {
+      color: #003f7f;
+      text-align: center;
+      margin-bottom: 4px;
+      font-size: 1.1rem;
+    }
+
+    .token-card .hospital-sub {
+      text-align: center;
+      color: #555;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .token-card table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .token-card table td {
+      padding: 6px 4px;
+      font-size: 0.93rem;
+      border-bottom: 1px solid #e0e0e0;
+      color: #333;
+    }
+
+    .token-card table td:first-child {
+      font-weight: 600;
+      color: #003f7f;
+      width: 45%;
+    }
+
+    /* Emergency badge inline style handled inline below */
+  </style>
+</head>
+<body>
+
+<!-- ===================== HEADER & NAV ===================== -->
+<header class="site-header">
+  <div class="header-top">
+    <!-- Logo placeholder -->
+    <div class="logo-area">
+      <div class="logo-icon" aria-label="Hospital Logo">🏥</div>
+      <div class="logo-text">
+        <span class="hospital-name">Itahari Government Hospital</span>
+        <span class="hospital-tagline">Affordable Healthcare for All • Bima Accepted</span>
+      </div>
+    </div>
+
+    <!-- Emergency contact -->
+    <div class="emergency-contact">
+      <span style="background:#e53935;color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:0.85rem;">🚨 EMERGENCY: 025-580100</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#bima">Bima Service</a></li>
+      <li><a href="#token-booking">Token Booking</a></li>
+      <li><a href="#registration">Patient Registration</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===================== HERO SECTION ===================== -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Your Health, Our Priority</h1>
+    <p>Itahari Government Hospital provides affordable, quality healthcare to all citizens of Sunsari and surrounding districts. We are a government-funded hospital serving the community with dignity and care.</p>
+    <p class="hero-bima-note">✅ <strong>Bima / Health Insurance Accepted</strong> — Unlike most private hospitals, we proudly support government health insurance schemes.</p>
+    <div class="hero-buttons">
+      <a href="#token-booking" class="btn btn-primary">📋 Book Appointment</a>
+      <a href="#token-booking" class="btn btn-secondary">🎫 Get Token</a>
+      <a href="tel:025580100" class="btn btn-emergency" style="background:#e53935;color:#fff;border:2px solid #e53935;">🚨 Emergency Service</a>
+    </div>
+  </div>
+  <!-- Hero image placeholder -->
+  <div class="hero-image-placeholder" aria-label="Hospital building illustration">
+    <div class="hero-img-box">
+      <span style="font-size:5rem;">🏥</span>
+      <p style="color:#b3d9ff;font-size:1rem;margin-top:8px;">Itahari Government Hospital</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT SECTION ===================== -->
+<section class="about-section section-pad" id="about">
+  <div class="container">
+    <div class="section-label">About Us</div>
+    <h2 class="section-title">Serving Itahari Since 1987</h2>
+    <div class="about-grid">
+      <!-- About text -->
+      <div class="about-text">
+        <p>Itahari Government Hospital is a publicly funded healthcare institution located in Itahari, Sunsari, Nepal. Established to provide accessible and affordable medical care to all residents of the region, the hospital operates under the Government of Nepal's health ministry and follows national healthcare standards.</p>
+        <p>We believe that quality healthcare is a right, not a privilege. Our dedicated team of doctors, nurses, and staff work tirelessly to ensure every patient receives compassionate, professional care regardless of their financial background.</p>
+        <p><strong>We proudly accept Bima (Health Insurance)</strong> for eligible patients, ensuring that no one is turned away due to inability to pay.</p>
+        <ul class="about-list">
+          <li>✅ Affordable healthcare services for all</li>
+          <li>✅ Government-supported and publicly funded</li>
+          <li>✅ Bima / Health Insurance fully accepted</li>
+          <li>✅ Emergency care available 24 hours, 7 days a week</li>
+          <li>✅ Qualified doctors and certified medical staff</li>
+          <li>✅ On-site laboratory and pharmacy services</li>
+          <li>✅ Maternity and child care facilities</li>
+          <li>✅ Specialist referral services available</li>
+        </ul>
+      </div>
+      <!-- About image placeholder -->
+      <div class="about-image">
+        <div class="img-placeholder">
+          <span style="font-size:4rem;">🩺</span>
+          <p>Our Medical Team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES SECTION ===================== -->
+<section class="services-section section-pad" id="services">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Hospital Services</h2>
+    <p class="section-desc">We provide a wide range of medical services to meet the healthcare needs of our community.</p>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+
+      <div class="service-card emergency-card">
+        <div class="service-icon">🚨</div>
+        <h3>Emergency Service</h3>
+        <p>Round-the-clock emergency care for accidents, critical conditions, and urgent medical needs. No token required.</p>
+        <a href="#contact" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <h3>OPD Service</h3>
+        <p>Outpatient Department services for general health checkups, consultations, and follow-up visits.</p>
+        <a href="#token-booking" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card bima-card">
+        <div class="service-icon">🛡️</div>
+        <h3>Bima / Insurance Service</h3>
+        <p>We accept government health insurance (Bima). Eligible patients can receive treatment covered by their health card.</p>
+        <a href="#bima" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💊</div>
+        <h3>Pharmacy</h3>
+        <p>On-site pharmacy providing prescribed medicines at subsidised government rates for patients.</p>
+        <a href="#contact" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <h3>Laboratory Test</h3>
+        <p>Blood tests, urine tests, and other diagnostic laboratory services at affordable government prices.</p>
+        <a href="#contact" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📷</div>
+        <h3>X-Ray and Ultrasound</h3>
+        <p>Digital X-ray and ultrasound imaging services for accurate diagnosis and treatment planning.</p>
+        <a href="#contact" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤰</div>
+        <h3>Maternity Service</h3>
+        <p>Safe delivery services, antenatal checkups, and postnatal care for mothers and newborns.</p>
+        <a href="#contact" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👶</div>
+        <h3>Child Care</h3>
+        <p>Paediatric consultations, vaccinations, and child health monitoring by our specialist doctors.</p>
+        <a href="#doctors" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚑</div>
+        <h3>Ambulance Service</h3>
+        <p>Emergency ambulance service available for patient transport to and from the hospital.</p>
+        <a href="tel:025580100" class="card-link">Learn More →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👨‍⚕️</div>
+        <h3>Specialist Doctors</h3>
+        <p>Consultations with specialist doctors in gynaecology, paediatrics, dental, and other departments.</p>
+        <a href="#doctors" class="card-link">Learn More →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOCTORS SECTION ===================== -->
+<section class="doctors-section section-pad" id="doctors">
+  <div class="container">
+    <div class="section-label">Our Team</div>
+    <h2 class="section-title">Meet Our Doctors</h2>
+    <p class="section-desc">Our experienced doctors are committed to providing the best care to every patient.</p>
+
+    <div class="doctors-flex">
+
+      <div class="doctor-card">
+        <div class="doctor-img-placeholder">👨‍⚕️</div>
+        <h3>Dr. Ram Kumar</h3>
+        <span class="dept-badge">General Physician</span>
+        <p class="doc-schedule">📅 Sun – Fri</p>
+        <p class="doc-schedule">⏰ 9:00 AM – 4:00 PM</p>
+        <p class="doc-room">🚪 Room 101</p>
+        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-img-placeholder">👩‍⚕️</div>
+        <h3>Dr. Sita Sharma</h3>
+        <span class="dept-badge dept-gyne">Gynaecologist</span>
+        <p class="doc-schedule">📅 Sun – Thu</p>
+        <p class="doc-schedule">⏰ 10:00 AM – 5:00 PM</p>
+        <p class="doc-room">🚪 Room 202</p>
+        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-img-placeholder">👨‍⚕️</div>
+        <h3>Dr. Anil Thapa</h3>
+        <span class="dept-badge dept-ped">Paediatrician</span>
+        <p class="doc-schedule">📅 Sun – Fri</p>
+        <p class="doc-schedule">⏰ 9:30 AM – 4:30 PM</p>
+        <p class="doc-room">🚪 Room 105</p>
+        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
+      </div>
+
+      <div class="doctor-card">
+        <div class="doctor-img-placeholder">👩‍⚕️</div>
+        <h3>Dr. Maya Rai</h3>
+        <span class="dept-badge dept-dental">Dental Surgeon</span>
+        <p class="doc-schedule">📅 Mon – Fri</p>
+        <p class="doc-schedule">⏰ 11:00 AM – 2:00 PM</p>
+        <p class="doc-room">🚪 Room 303</p>
+        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BIMA SECTION ===================== -->
+<section class="section-pad bima-section" id="bima">
+  <div class="container">
+    <div class="section-label">Health Insurance</div>
+    <h2 class="section-title">Bima / Health Insurance Service</h2>
+    <p>Itahari Government Hospital is proud to be a Bima-registered hospital. Eligible patients can access medical treatment using their government health insurance card. Unlike many private hospitals, <strong>we fully support the national health insurance programme</strong>.</p>
+
+    <div class="bima-grid">
+      <div class="bima-info">
+        <h3>How Bima Works Here</h3>
+        <ul class="about-list">
+          <li>🛡️ Bima service is available for OPD consultations</li>
+          <li>🛡️ Laboratory and diagnostic tests are covered</li>
+          <li>🛡️ Prescribed medicines from pharmacy are included</li>
+          <li>🛡️ Selected surgical and inpatient treatments covered</li>
+          <li>🛡️ Maternity and child care services are eligible</li>
+          <li>📄 Bring your Bima card, citizenship card, and hospital referral documents</li>
+          <li>📄 Insurance must be active and valid on the date of visit</li>
+          <li>📄 Go to the Bima counter at the reception before consulting a doctor</li>
+        </ul>
+      </div>
+
+      <div class="bima-table-wrap">
+        <h3>Bima Coverage Table</h3>
+        <div class="table-scroll">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Bima Available</th>
+                <th>Required Document</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>OPD Consultation</td>
+                <td><span class="badge-yes">Yes</span></td>
+                <td>Bima Card, Citizenship</td>
+                <td>All departments</td>
+              </tr>
+              <tr>
+                <td>Laboratory Tests</td>
+                <td><span class="badge-yes">Yes</span></td>
+                <td>Bima Card, Doctor Referral</td>
+                <td>Standard tests only</td>
+              </tr>
+              <tr>
+                <td>Pharmacy / Medicines</td>
+                <td><span class="badge-yes">Yes</span></td>
+                <td>Bima Card, Prescription</td>
+                <td>Listed medicines only</td>
+              </tr>
+              <tr>
+                <td>X-Ray / Ultrasound</td>
+                <td><span class="badge-yes">Yes</span></td>
+                <td>Bima Card, Referral Form</td>
+                <td>As per Bima limit</td>
+              </tr>
+              <tr>
+                <td>Inpatient / Surgery</td>
+                <td><span class="badge-partial">Partial</span></td>
+                <td>Bima Card, Citizenship, ID</td>
+                <td>Selected procedures</td>
+              </tr>
+              <tr>
+                <td>Emergency</td>
+                <td><span class="badge-no">No</span></td>
+                <td>—</td>
+                <td>Free emergency care provided</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOKEN BOOKING SECTION ===================== -->
+<section class="section-pad" id="token-booking" style="background:#f0f6ff;">
+  <div class="container">
+    <div class="section-label">Queue Management</div>
+    <h2 class="section-title">Online Token Booking</h2>
+    <p class="section-desc">Book your appointment token online to avoid long queues at the hospital reception.</p>
+
+    <div class="token-layout">
+      <!-- Token booking form -->
+      <div class="token-form-wrap">
+        <form class="hospital-form" action="#" method="get">
+          <h3 class="form-title">Book Your Token</h3>
+
+          <div class="form-group">
+            <label for="token-name">Patient Full Name *</label>
+            <input type="text" id="token-name" name="patientName" placeholder="Enter full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="token-phone">Phone Number *</label>
+            <input type="tel" id="token-phone" name="phone" placeholder="e.g. 9800000000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="token-dept">Department *</label>
+            <select id="token-dept" name="department" required>
+              <option value="">-- Select Department --</option>
+              <option value="opd">General OPD</option>
+              <option value="gyne">Gynaecology</option>
+              <option value="ped">Paediatrics</option>
+              <option value="dental">Dental</option>
+              <option value="emergency">Emergency</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="token-doctor">Doctor Name *</label>
+            <select id="token-doctor" name="doctor" required>
+              <option value="">-- Select Doctor --</option>
+              <option value="ram">Dr. Ram Kumar – General Physician</option>
+              <option value="sita">Dr. Sita Sharma – Gynaecologist</option>
+              <option value="anil">Dr. Anil Thapa – Paediatrician</option>
+              <option value="maya">Dr. Maya Rai – Dental Surgeon</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="token-date">Appointment Date *</label>
+              <input type="date" id="token-date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="token-time">Preferred Time *</label>
+              <input type="time" id="token-time" name="time" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Bima / Insurance Available?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="bima" value="yes" /> Yes</label>
+              <label><input type="radio" name="bima" value="no" checked /> No</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="token-bima-num">Bima Number (if applicable)</label>
+            <input type="text" id="token-bima-num" name="bimaNumber" placeholder="Enter Bima card number" />
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" class="btn btn-primary">📋 Submit Token Booking</button>
+            <button type="reset" class="btn btn-outline">↺ Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sample token card -->
+      <div>
+        <h3 style="text-align:center;color:#003f7f;margin-bottom:8px;">Sample Token Card</h3>
+        <p style="text-align:center;color:#666;font-size:0.88rem;margin-bottom:0;">This is how your token receipt will look</p>
+
+        <div class="token-card">
+          <h3>🏥 Itahari Government Hospital</h3>
+          <p class="hospital-sub">Itahari, Sunsari, Nepal | Bima Accepted</p>
+
+          <!-- Token number badge inline styled -->
+          <div style="text-align:center;margin:14px 0;">
+            <span style="background:#003f7f;color:#fff;font-size:1.6rem;font-weight:800;padding:10px 32px;border-radius:8px;letter-spacing:3px;">A-102</span>
+            <p style="font-size:0.78rem;color:#888;margin-top:6px;">Token Number</p>
+          </div>
+
+          <table>
+            <tr><td>Patient Name</td><td>Example Patient</td></tr>
+            <tr><td>Department</td><td>General OPD</td></tr>
+            <tr><td>Doctor</td><td>Dr. Ram Kumar</td></tr>
+            <tr><td>Date</td><td>25 June 2026</td></tr>
+            <tr><td>Time</td><td>10:30 AM</td></tr>
+            <tr><td>Queue Status</td><td><span style="color:#f57c00;font-weight:700;">⏳ Waiting</span></td></tr>
+            <tr><td>Bima Status</td><td><span style="color:#2e7d32;font-weight:700;">✅ Available</span></td></tr>
+          </table>
+        </div>
+
+        <!-- Token information list -->
+        <div class="token-info-list">
+          <h4>📌 Important Token Information</h4>
+          <ul>
+            <li>Patients should arrive at least 15 minutes before their scheduled time.</li>
+            <li>Token number is valid only for the selected date.</li>
+            <li>Bima patients must bring their Bima card and citizenship card.</li>
+            <li>Emergency patients do not need to wait for a token.</li>
+            <li>Patients should report to the reception desk after arriving.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOKEN STATUS SECTION ===================== -->
+<section class="section-pad" id="token-status">
+  <div class="container">
+    <div class="section-label">Live Queue</div>
+    <h2 class="section-title">Current Token Status</h2>
+    <p class="section-desc">Check which token number is currently being served in each department.</p>
+
+    <div class="status-grid">
+
+      <div class="status-card status-serving">
+        <div class="status-dept">General OPD</div>
+        <div class="status-label">Now Serving</div>
+        <div class="status-token" style="background:#0077cc;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">A-087</div>
+        <div class="status-info">Dr. Ram Kumar | Room 101</div>
+      </div>
+
+      <div class="status-card status-serving" style="border-color:#7b1fa2;">
+        <div class="status-dept">Gynaecology</div>
+        <div class="status-label">Now Serving</div>
+        <div class="status-token" style="background:#7b1fa2;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">B-021</div>
+        <div class="status-info">Dr. Sita Sharma | Room 202</div>
+      </div>
+
+      <div class="status-card status-serving" style="border-color:#00897b;">
+        <div class="status-dept">Paediatrics</div>
+        <div class="status-label">Now Serving</div>
+        <div class="status-token" style="background:#00897b;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">C-015</div>
+        <div class="status-info">Dr. Anil Thapa | Room 105</div>
+      </div>
+
+      <div class="status-card status-serving" style="border-color:#e65100;">
+        <div class="status-dept">Dental</div>
+        <div class="status-label">Now Serving</div>
+        <div class="status-token" style="background:#e65100;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">D-008</div>
+        <div class="status-info">Dr. Maya Rai | Room 303</div>
+      </div>
+
+      <div class="status-card status-emergency">
+        <div class="status-dept">Emergency</div>
+        <div class="status-label" style="color:#e53935;">🚨 Always Open</div>
+        <div class="status-token" style="background:#e53935;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.2rem;font-weight:800;display:inline-block;margin:8px 0;">24 / 7</div>
+        <div class="status-info">Emergency Block | No Token Needed</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PATIENT REGISTRATION ===================== -->
+<section class="section-pad" id="registration" style="background:#f8faff;">
+  <div class="container">
+    <div class="section-label">New Patient</div>
+    <h2 class="section-title">Patient Registration</h2>
+    <p class="section-desc">Register as a new patient to receive a unique hospital ID and streamline your future visits.</p>
+
+    <form class="hospital-form reg-form" action="#" method="get">
+
+      <!-- Two-column grid row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-name">Full Name *</label>
+          <input type="text" id="reg-name" name="fullName" placeholder="Enter full name" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-dob">Date of Birth *</label>
+          <input type="date" id="reg-dob" name="dob" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="gender" value="male" required /> Male</label>
+            <label><input type="radio" name="gender" value="female" /> Female</label>
+            <label><input type="radio" name="gender" value="other" /> Other</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-blood">Blood Group</label>
+          <select id="reg-blood" name="bloodGroup">
+            <option value="">-- Select --</option>
+            <option>A+</option><option>A−</option>
+            <option>B+</option><option>B−</option>
+            <option>O+</option><option>O−</option>
+            <option>AB+</option><option>AB−</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-phone">Phone Number *</label>
+          <input type="tel" id="reg-phone" name="phone" placeholder="e.g. 9800000000" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" name="email" placeholder="example@email.com" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-address">Address *</label>
+        <input type="text" id="reg-address" name="address" placeholder="Ward, Tole, Municipality, District" required />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-dept">Department Needed *</label>
+          <select id="reg-dept" name="department" required>
+            <option value="">-- Select Department --</option>
+            <option>General OPD</option>
+            <option>Gynaecology</option>
+            <option>Paediatrics</option>
+            <option>Dental</option>
+            <option>Emergency</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Insurance / Bima Available?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="regBima" value="yes" /> Yes</label>
+            <label><input type="radio" name="regBima" value="no" checked /> No</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-bima">Bima Number (if applicable)</label>
+        <input type="text" id="reg-bima" name="bimaNumber" placeholder="Enter Bima card number" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="reg-ec-name">Emergency Contact Name *</label>
+          <input type="text" id="reg-ec-name" name="emergencyName" placeholder="Full name" required />
+        </div>
+        <div class="form-group">
+          <label for="reg-ec-num">Emergency Contact Number *</label>
+          <input type="tel" id="reg-ec-num" name="emergencyPhone" placeholder="e.g. 9800000000" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="reg-symptoms">Symptoms / Problem *</label>
+        <textarea id="reg-symptoms" name="symptoms" rows="4" placeholder="Describe your symptoms or the reason for your visit..." required></textarea>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-primary">✅ Submit Registration</button>
+        <button type="reset" class="btn btn-outline">↺ Reset Form</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- ===================== DOCTOR SCHEDULE TABLE ===================== -->
+<section class="section-pad" id="schedule">
+  <div class="container">
+    <div class="section-label">Schedule</div>
+    <h2 class="section-title">Doctor Availability Schedule</h2>
+    <div class="table-scroll">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Department</th>
+            <th>Doctor Name</th>
+            <th>Available Days</th>
+            <th>Morning Time</th>
+            <th>Afternoon Time</th>
+            <th>Max Tokens/Day</th>
+            <th>Room No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span style="background:#003f7f;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">A</span></td>
+            <td>General OPD</td>
+            <td>Dr. Ram Kumar</td>
+            <td>Sun – Fri</td>
+            <td>9:00 AM – 12:00 PM</td>
+            <td>2:00 PM – 4:00 PM</td>
+            <td>50</td>
+            <td>Room 101</td>
+          </tr>
+          <tr>
+            <td><span style="background:#7b1fa2;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">B</span></td>
+            <td>Gynaecology</td>
+            <td>Dr. Sita Sharma</td>
+            <td>Sun – Thu</td>
+            <td>10:00 AM – 1:00 PM</td>
+            <td>3:00 PM – 5:00 PM</td>
+            <td>30</td>
+            <td>Room 202</td>
+          </tr>
+          <tr>
+            <td><span style="background:#00897b;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">C</span></td>
+            <td>Paediatrics</td>
+            <td>Dr. Anil Thapa</td>
+            <td>Sun – Fri</td>
+            <td>9:30 AM – 12:30 PM</td>
+            <td>2:30 PM – 4:30 PM</td>
+            <td>35</td>
+            <td>Room 105</td>
+          </tr>
+          <tr>
+            <td><span style="background:#e65100;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">D</span></td>
+            <td>Dental</td>
+            <td>Dr. Maya Rai</td>
+            <td>Mon – Fri</td>
+            <td>11:00 AM – 2:00 PM</td>
+            <td>Not Available</td>
+            <td>25</td>
+            <td>Room 303</td>
+          </tr>
+          <tr>
+            <td><span style="background:#e53935;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">E</span></td>
+            <td>Emergency</td>
+            <td>Emergency Doctor</td>
+            <td>Every Day</td>
+            <td>24 Hours</td>
+            <td>24 Hours</td>
+            <td>Unlimited</td>
+            <td>Emergency Block</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">⚠️ Doctor schedules may change due to emergency duty, leave, or government hospital programmes. Please contact the reception desk before visiting.</p>
+  </div>
+</section>
+
+<!-- ===================== DEPARTMENT SCHEDULE TABLE ===================== -->
+<section class="section-pad" style="background:#f0f6ff;" id="dept-schedule">
+  <div class="container">
+    <div class="section-label">Departments</div>
+    <h2 class="section-title">Hospital Department Schedule</h2>
+    <div class="table-scroll">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Doctor Name</th>
+            <th>Available Days</th>
+            <th>Time</th>
+            <th>Room Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>General OPD</td>
+            <td>Dr. Ram Kumar</td>
+            <td>Sun – Fri</td>
+            <td>9:00 AM – 4:00 PM</td>
+            <td>Room 101</td>
+          </tr>
+          <tr>
+            <td>Gynaecology</td>
+            <td>Dr. Sita Sharma</td>
+            <td>Sun – Thu</td>
+            <td>10:00 AM – 5:00 PM</td>
+            <td>Room 202</td>
+          </tr>
+          <tr>
+            <td>Paediatrics</td>
+            <td>Dr. Anil Thapa</td>
+            <td>Sun – Fri</td>
+            <td>9:30 AM – 4:30 PM</td>
+            <td>Room 105</td>
+          </tr>
+          <tr>
+            <td>Dental</td>
+            <td>Dr. Maya Rai</td>
+            <td>Mon – Fri</td>
+            <td>11:00 AM – 2:00 PM</td>
+            <td>Room 303</td>
+          </tr>
+          <tr>
+            <td>Emergency</td>
+            <td>Emergency Doctor</td>
+            <td>Every Day</td>
+            <td>24 Hours</td>
+            <td>Emergency Block</td>
+          </tr>
+          <tr>
+            <td>Laboratory</td>
+            <td>Lab Technician</td>
+            <td>Sun – Fri</td>
+            <td>8:00 AM – 3:00 PM</td>
+            <td>Lab Room (Ground Floor)</td>
+          </tr>
+          <tr>
+            <td>Pharmacy</td>
+            <td>Pharmacist on Duty</td>
+            <td>Every Day</td>
+            <td>8:00 AM – 6:00 PM</td>
+            <td>Pharmacy Counter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT SECTION ===================== -->
+<section class="section-pad" id="contact">
+  <div class="container">
+    <div class="section-label">Find Us</div>
+    <h2 class="section-title">Contact Information</h2>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h3>Hospital Details</h3>
+        <ul class="contact-list">
+          <li>📍 <strong>Address:</strong> Itahari, Sunsari, Nepal</li>
+          <li>📞 <strong>Phone:</strong> <a href="tel:025580100">025-580100</a></li>
+          <li>🚨 <strong>Emergency:</strong> <a href="tel:025580100">025-580100</a> (24/7)</li>
+          <li>📧 <strong>Email:</strong> <a href="mailto:info@itaharihospital.gov.np">info@itaharihospital.gov.np</a></li>
+        </ul>
+
+        <h3 style="margin-top:24px;">Opening Hours</h3>
+        <ul class="contact-list">
+          <li>🕗 OPD: Sunday – Friday, 9:00 AM – 5:00 PM</li>
+          <li>🕗 Pharmacy: Every Day, 8:00 AM – 6:00 PM</li>
+          <li>🚨 Emergency: 24 Hours, 7 Days a Week</li>
+          <li>🗓️ Closed: Saturday (Emergency open)</li>
+        </ul>
+
+        <!-- Social media placeholder links -->
+        <h3 style="margin-top:24px;">Follow Us</h3>
+        <div class="social-links">
+          <a href="#" class="social-btn" style="background:#1877f2;">Facebook</a>
+          <a href="#" class="social-btn" style="background:#e4405f;">Instagram</a>
+          <a href="#" class="social-btn" style="background:#1da1f2;">Twitter</a>
+        </div>
+      </div>
+
+      <!-- Google Map placeholder -->
+      <div class="map-placeholder">
+        <div class="map-box">
+          <span style="font-size:3rem;">🗺️</span>
+          <p>Itahari Government Hospital</p>
+          <p style="font-size:0.9rem;color:#888;">Itahari, Sunsari, Nepal</p>
+          <a href="https://maps.google.com/?q=Itahari+Sunsari+Nepal" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Open in Google Maps</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-grid">
+
+    <div class="footer-col">
+      <h4>🏥 Itahari Government Hospital</h4>
+      <p>Government-funded hospital providing affordable and quality healthcare to all citizens of Itahari and Sunsari, Nepal.</p>
+      <p style="margin-top:8px;"><strong>🛡️ Bima / Health Insurance Accepted</strong></p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#bima">Bima Service</a></li>
+        <li><a href="#token-booking">Token Booking</a></li>
+        <li><a href="#registration">Patient Registration</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Emergency Contact</h4>
+      <ul class="footer-links">
+        <li>🚨 Emergency: <a href="tel:025580100">025-580100</a></li>
+        <li>📞 Reception: <a href="tel:025580100">025-580100</a></li>
+        <li>📧 <a href="mailto:info@itaharihospital.gov.np">info@itaharihospital.gov.np</a></li>
+        <li>📍 Itahari, Sunsari, Nepal</li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Bima Information</h4>
+      <ul class="footer-links">
+        <li><a href="#bima">How Bima Works</a></li>
+        <li><a href="#bima">Bima Coverage Table</a></li>
+        <li><a href="#bima">Required Documents</a></li>
+        <li><a href="#registration">Register as Patient</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Itahari Government Hospital. All Rights Reserved. | Government of Nepal – Ministry of Health and Population</p>
+  </div>
+</footer>
+
+</body>
+</html>
