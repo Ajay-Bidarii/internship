@@ -4,364 +4,335 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Itahari Government Hospital</title>
-
-  <!-- External CSS -->
-  <link rel="stylesheet" href="Clinic.css" />
-
-  <!-- Internal CSS for specific page-level overrides -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hospital-dark':  '#003f7f',
+            'hospital-blue':  '#0077cc',
+            'hospital-nav':   '#00336a',
+            'hospital-teal':  '#00897b',
+            'hospital-red':   '#e53935',
+            'hospital-light': '#f5f7fa',
+            'footer-dark':    '#00244d',
+            'footer-darker':  '#001a38',
+          },
+          fontFamily: {
+            sans: ['Segoe UI', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
   <style>
-    /* Hero section background gradient */
-    .hero {
-      background: linear-gradient(135deg, #003f7f 0%, #0077cc 60%, #00b894 100%);
-    }
-
-    /* Bima highlight section */
-    .bima-section {
-      background: linear-gradient(120deg, #e8f5e9 0%, #b2dfdb 100%);
-      border-left: 6px solid #00897b;
-    }
-
-    /* Token card receipt style */
-    .token-card {
-      background: #fff;
-      border: 2px solid #0077cc;
-      border-radius: 12px;
-      padding: 28px 32px;
-      max-width: 420px;
-      box-shadow: 0 6px 24px rgba(0, 119, 204, 0.13);
-      margin: 28px auto 0;
-    }
-
-    .token-card h3 {
-      color: #003f7f;
-      text-align: center;
-      margin-bottom: 4px;
-      font-size: 1.1rem;
-    }
-
-    .token-card .hospital-sub {
-      text-align: center;
-      color: #555;
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-
-    .token-card table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .token-card table td {
-      padding: 6px 4px;
-      font-size: 0.93rem;
-      border-bottom: 1px solid #e0e0e0;
-      color: #333;
-    }
-
-    .token-card table td:first-child {
-      font-weight: 600;
-      color: #003f7f;
-      width: 45%;
-    }
-
-    /* Emergency badge inline style handled inline below */
+    html { scroll-behavior: smooth; }
+    .nav-link { border-bottom: 3px solid transparent; }
+    .nav-link:hover { border-bottom-color: #00c896; }
   </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-hospital-light leading-relaxed">
 
-<!-- ===================== HEADER & NAV ===================== -->
-<header class="site-header">
-  <div class="header-top">
-    <!-- Logo placeholder -->
-    <div class="logo-area">
-      <div class="logo-icon" aria-label="Hospital Logo">🏥</div>
-      <div class="logo-text">
-        <span class="hospital-name">Itahari Government Hospital</span>
-        <span class="hospital-tagline">Affordable Healthcare for All • Bima Accepted</span>
+<!-- ===================== HEADER ===================== -->
+<header class="bg-hospital-dark sticky top-0 z-50 shadow-lg">
+  <!-- Top bar -->
+  <div class="flex flex-wrap items-center justify-between gap-3 px-6 py-3">
+    <div class="flex items-center gap-3">
+      <span class="text-4xl leading-none" aria-label="Hospital Logo">🏥</span>
+      <div>
+        <span class="block text-white font-extrabold text-lg tracking-wide">Itahari Government Hospital</span>
+        <span class="block text-blue-200 text-xs mt-0.5">Affordable Healthcare for All • Bima Accepted</span>
       </div>
     </div>
-
-    <!-- Emergency contact -->
-    <div class="emergency-contact">
-      <span style="background:#e53935;color:#fff;padding:4px 12px;border-radius:20px;font-weight:700;font-size:0.85rem;">🚨 EMERGENCY: 025-580100</span>
-    </div>
+    <span class="bg-hospital-red text-white px-4 py-1.5 rounded-full font-bold text-sm">🚨 EMERGENCY: 025-580100</span>
   </div>
 
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <ul class="nav-list">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#doctors">Doctors</a></li>
-      <li><a href="#bima">Bima Service</a></li>
-      <li><a href="#token-booking">Token Booking</a></li>
-      <li><a href="#registration">Patient Registration</a></li>
-      <li><a href="#contact">Contact</a></li>
+  <!-- Nav -->
+  <nav class="bg-hospital-nav px-4">
+    <ul class="flex flex-wrap">
+      <li><a href="#home"          class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Home</a></li>
+      <li><a href="#services"      class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Services</a></li>
+      <li><a href="#doctors"       class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Doctors</a></li>
+      <li><a href="#bima"          class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Bima Service</a></li>
+      <li><a href="#token-booking" class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Token Booking</a></li>
+      <li><a href="#registration"  class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Patient Registration</a></li>
+      <li><a href="#contact"       class="nav-link block text-blue-200 hover:text-white hover:bg-white/10 font-semibold text-sm px-4 py-3 transition-all">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<!-- ===================== HERO SECTION ===================== -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1>Your Health, Our Priority</h1>
-    <p>Itahari Government Hospital provides affordable, quality healthcare to all citizens of Sunsari and surrounding districts. We are a government-funded hospital serving the community with dignity and care.</p>
-    <p class="hero-bima-note">✅ <strong>Bima / Health Insurance Accepted</strong> — Unlike most private hospitals, we proudly support government health insurance schemes.</p>
-    <div class="hero-buttons">
-      <a href="#token-booking" class="btn btn-primary">📋 Book Appointment</a>
-      <a href="#token-booking" class="btn btn-secondary">🎫 Get Token</a>
-      <a href="tel:025580100" class="btn btn-emergency" style="background:#e53935;color:#fff;border:2px solid #e53935;">🚨 Emergency Service</a>
+<!-- ===================== HERO ===================== -->
+<section id="home" class="flex flex-wrap items-center justify-between gap-8 px-12 py-20 min-h-[500px]"
+  style="background: linear-gradient(135deg, #003f7f 0%, #0077cc 60%, #00b894 100%);">
+  <div class="flex-1 min-w-[320px] max-w-xl">
+    <h1 class="text-5xl font-black text-white leading-tight mb-5">Your Health, Our Priority</h1>
+    <p class="text-blue-100 text-lg mb-3">Itahari Government Hospital provides affordable, quality healthcare to all citizens of Sunsari and surrounding districts.</p>
+    <div class="bg-teal-800/30 border-l-4 border-teal-300 rounded px-4 py-3 text-teal-100 text-sm mb-7">
+      ✅ <strong>Bima / Health Insurance Accepted</strong> — Unlike most private hospitals, we proudly support government health insurance schemes.
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <a href="#token-booking" class="inline-block bg-hospital-blue hover:bg-blue-800 text-white font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5">📋 Book Appointment</a>
+      <a href="#token-booking" class="inline-block bg-white/15 hover:bg-white hover:text-hospital-dark border-2 border-white text-white font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5">🎫 Get Token</a>
+      <a href="tel:025580100"  class="inline-block bg-hospital-red hover:bg-red-700 border-2 border-hospital-red text-white font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5">🚨 Emergency</a>
     </div>
   </div>
-  <!-- Hero image placeholder -->
-  <div class="hero-image-placeholder" aria-label="Hospital building illustration">
-    <div class="hero-img-box">
-      <span style="font-size:5rem;">🏥</span>
-      <p style="color:#b3d9ff;font-size:1rem;margin-top:8px;">Itahari Government Hospital</p>
+  <div class="hidden md:flex flex-none w-64 items-center justify-center">
+    <div class="bg-white/10 border-2 border-dashed border-white/30 rounded-2xl px-8 py-10 text-center">
+      <span class="text-8xl">🏥</span>
+      <p class="text-blue-200 mt-3 text-base">Itahari Government Hospital</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== ABOUT SECTION ===================== -->
-<section class="about-section section-pad" id="about">
-  <div class="container">
-    <div class="section-label">About Us</div>
-    <h2 class="section-title">Serving Itahari Since 1987</h2>
-    <div class="about-grid">
-      <!-- About text -->
-      <div class="about-text">
-        <p>Itahari Government Hospital is a publicly funded healthcare institution located in Itahari, Sunsari, Nepal. Established to provide accessible and affordable medical care to all residents of the region, the hospital operates under the Government of Nepal's health ministry and follows national healthcare standards.</p>
-        <p>We believe that quality healthcare is a right, not a privilege. Our dedicated team of doctors, nurses, and staff work tirelessly to ensure every patient receives compassionate, professional care regardless of their financial background.</p>
-        <p><strong>We proudly accept Bima (Health Insurance)</strong> for eligible patients, ensuring that no one is turned away due to inability to pay.</p>
-        <ul class="about-list">
-          <li>✅ Affordable healthcare services for all</li>
-          <li>✅ Government-supported and publicly funded</li>
-          <li>✅ Bima / Health Insurance fully accepted</li>
-          <li>✅ Emergency care available 24 hours, 7 days a week</li>
-          <li>✅ Qualified doctors and certified medical staff</li>
-          <li>✅ On-site laboratory and pharmacy services</li>
-          <li>✅ Maternity and child care facilities</li>
-          <li>✅ Specialist referral services available</li>
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="bg-white py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">About Us</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-4">Serving Itahari Since 1987</h2>
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-12 items-start mt-6">
+      <div>
+        <p class="text-gray-600 mb-3">Itahari Government Hospital is a publicly funded healthcare institution located in Itahari, Sunsari, Nepal. Established to provide accessible and affordable medical care to all residents of the region, the hospital operates under the Government of Nepal's health ministry.</p>
+        <p class="text-gray-600 mb-3">We believe that quality healthcare is a right, not a privilege. Our dedicated team works tirelessly to ensure every patient receives compassionate, professional care regardless of their financial background.</p>
+        <p class="text-gray-600 mb-4"><strong>We proudly accept Bima (Health Insurance)</strong> for eligible patients.</p>
+        <ul class="divide-y divide-gray-100">
+          <li class="py-2 text-sm">✅ Affordable healthcare services for all</li>
+          <li class="py-2 text-sm">✅ Government-supported and publicly funded</li>
+          <li class="py-2 text-sm">✅ Bima / Health Insurance fully accepted</li>
+          <li class="py-2 text-sm">✅ Emergency care available 24 hours, 7 days a week</li>
+          <li class="py-2 text-sm">✅ Qualified doctors and certified medical staff</li>
+          <li class="py-2 text-sm">✅ On-site laboratory and pharmacy services</li>
+          <li class="py-2 text-sm">✅ Maternity and child care facilities</li>
+          <li class="py-2 text-sm">✅ Specialist referral services available</li>
         </ul>
       </div>
-      <!-- About image placeholder -->
-      <div class="about-image">
-        <div class="img-placeholder">
-          <span style="font-size:4rem;">🩺</span>
-          <p>Our Medical Team</p>
-        </div>
+      <div class="bg-blue-50 border-2 border-dashed border-blue-200 rounded-xl py-14 px-8 text-center text-hospital-blue font-semibold">
+        <span class="text-6xl block mb-3">🩺</span>
+        Our Medical Team
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== SERVICES SECTION ===================== -->
-<section class="services-section section-pad" id="services">
-  <div class="container">
-    <div class="section-label">What We Offer</div>
-    <h2 class="section-title">Hospital Services</h2>
-    <p class="section-desc">We provide a wide range of medical services to meet the healthcare needs of our community.</p>
+<!-- ===================== SERVICES ===================== -->
+<section id="services" class="bg-hospital-light py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">What We Offer</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-3">Hospital Services</h2>
+    <p class="text-gray-500 max-w-xl mb-10">We provide a wide range of medical services to meet the healthcare needs of our community.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
-    <!-- Services Grid -->
-    <div class="services-grid">
-
-      <div class="service-card emergency-card">
-        <div class="service-icon">🚨</div>
-        <h3>Emergency Service</h3>
-        <p>Round-the-clock emergency care for accidents, critical conditions, and urgent medical needs. No token required.</p>
-        <a href="#contact" class="card-link">Learn More →</a>
+      <!-- Emergency -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 border-t-4 border-t-hospital-red shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🚨</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Emergency Service</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Round-the-clock emergency care for accidents and critical conditions. No token required.</p>
+        <a href="#contact" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🏥</div>
-        <h3>OPD Service</h3>
-        <p>Outpatient Department services for general health checkups, consultations, and follow-up visits.</p>
-        <a href="#token-booking" class="card-link">Learn More →</a>
+      <!-- OPD -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🏥</div>
+        <h3 class="font-bold text-hospital-dark mb-2">OPD Service</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Outpatient Department services for general health checkups, consultations, and follow-ups.</p>
+        <a href="#token-booking" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card bima-card">
-        <div class="service-icon">🛡️</div>
-        <h3>Bima / Insurance Service</h3>
-        <p>We accept government health insurance (Bima). Eligible patients can receive treatment covered by their health card.</p>
-        <a href="#bima" class="card-link">Learn More →</a>
+      <!-- Bima -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 border-t-4 border-t-hospital-teal shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🛡️</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Bima / Insurance</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">We accept government health insurance. Eligible patients can receive covered treatment.</p>
+        <a href="#bima" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">💊</div>
-        <h3>Pharmacy</h3>
-        <p>On-site pharmacy providing prescribed medicines at subsidised government rates for patients.</p>
-        <a href="#contact" class="card-link">Learn More →</a>
+      <!-- Pharmacy -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">💊</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Pharmacy</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">On-site pharmacy providing prescribed medicines at subsidised government rates.</p>
+        <a href="#contact" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🔬</div>
-        <h3>Laboratory Test</h3>
-        <p>Blood tests, urine tests, and other diagnostic laboratory services at affordable government prices.</p>
-        <a href="#contact" class="card-link">Learn More →</a>
+      <!-- Lab -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🔬</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Laboratory Test</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Blood, urine, and other diagnostic laboratory services at affordable government prices.</p>
+        <a href="#contact" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">📷</div>
-        <h3>X-Ray and Ultrasound</h3>
-        <p>Digital X-ray and ultrasound imaging services for accurate diagnosis and treatment planning.</p>
-        <a href="#contact" class="card-link">Learn More →</a>
+      <!-- Imaging -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">📷</div>
+        <h3 class="font-bold text-hospital-dark mb-2">X-Ray & Ultrasound</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Digital X-ray and ultrasound imaging services for accurate diagnosis and treatment.</p>
+        <a href="#contact" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🤰</div>
-        <h3>Maternity Service</h3>
-        <p>Safe delivery services, antenatal checkups, and postnatal care for mothers and newborns.</p>
-        <a href="#contact" class="card-link">Learn More →</a>
+      <!-- Maternity -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🤰</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Maternity Service</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Safe delivery services, antenatal checkups, and postnatal care for mothers.</p>
+        <a href="#contact" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">👶</div>
-        <h3>Child Care</h3>
-        <p>Paediatric consultations, vaccinations, and child health monitoring by our specialist doctors.</p>
-        <a href="#doctors" class="card-link">Learn More →</a>
+      <!-- Child Care -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">👶</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Child Care</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Paediatric consultations, vaccinations, and child health monitoring.</p>
+        <a href="#doctors" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">🚑</div>
-        <h3>Ambulance Service</h3>
-        <p>Emergency ambulance service available for patient transport to and from the hospital.</p>
-        <a href="tel:025580100" class="card-link">Learn More →</a>
+      <!-- Ambulance -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">🚑</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Ambulance Service</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Emergency ambulance service for patient transport to and from the hospital.</p>
+        <a href="tel:025580100" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
-      <div class="service-card">
-        <div class="service-icon">👨‍⚕️</div>
-        <h3>Specialist Doctors</h3>
-        <p>Consultations with specialist doctors in gynaecology, paediatrics, dental, and other departments.</p>
-        <a href="#doctors" class="card-link">Learn More →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== DOCTORS SECTION ===================== -->
-<section class="doctors-section section-pad" id="doctors">
-  <div class="container">
-    <div class="section-label">Our Team</div>
-    <h2 class="section-title">Meet Our Doctors</h2>
-    <p class="section-desc">Our experienced doctors are committed to providing the best care to every patient.</p>
-
-    <div class="doctors-flex">
-
-      <div class="doctor-card">
-        <div class="doctor-img-placeholder">👨‍⚕️</div>
-        <h3>Dr. Ram Kumar</h3>
-        <span class="dept-badge">General Physician</span>
-        <p class="doc-schedule">📅 Sun – Fri</p>
-        <p class="doc-schedule">⏰ 9:00 AM – 4:00 PM</p>
-        <p class="doc-room">🚪 Room 101</p>
-        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
-      </div>
-
-      <div class="doctor-card">
-        <div class="doctor-img-placeholder">👩‍⚕️</div>
-        <h3>Dr. Sita Sharma</h3>
-        <span class="dept-badge dept-gyne">Gynaecologist</span>
-        <p class="doc-schedule">📅 Sun – Thu</p>
-        <p class="doc-schedule">⏰ 10:00 AM – 5:00 PM</p>
-        <p class="doc-room">🚪 Room 202</p>
-        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
-      </div>
-
-      <div class="doctor-card">
-        <div class="doctor-img-placeholder">👨‍⚕️</div>
-        <h3>Dr. Anil Thapa</h3>
-        <span class="dept-badge dept-ped">Paediatrician</span>
-        <p class="doc-schedule">📅 Sun – Fri</p>
-        <p class="doc-schedule">⏰ 9:30 AM – 4:30 PM</p>
-        <p class="doc-room">🚪 Room 105</p>
-        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
-      </div>
-
-      <div class="doctor-card">
-        <div class="doctor-img-placeholder">👩‍⚕️</div>
-        <h3>Dr. Maya Rai</h3>
-        <span class="dept-badge dept-dental">Dental Surgeon</span>
-        <p class="doc-schedule">📅 Mon – Fri</p>
-        <p class="doc-schedule">⏰ 11:00 AM – 2:00 PM</p>
-        <p class="doc-room">🚪 Room 303</p>
-        <a href="#token-booking" class="btn btn-primary" style="margin-top:12px;display:inline-block;font-size:0.85rem;padding:8px 18px;">Book Appointment</a>
+      <!-- Specialists -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-4xl mb-3">👨‍⚕️</div>
+        <h3 class="font-bold text-hospital-dark mb-2">Specialist Doctors</h3>
+        <p class="text-gray-500 text-sm mb-4 leading-relaxed">Consultations in gynaecology, paediatrics, dental, and other departments.</p>
+        <a href="#doctors" class="text-hospital-blue text-sm font-bold hover:text-hospital-dark">Learn More →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ===================== BIMA SECTION ===================== -->
-<section class="section-pad bima-section" id="bima">
-  <div class="container">
-    <div class="section-label">Health Insurance</div>
-    <h2 class="section-title">Bima / Health Insurance Service</h2>
-    <p>Itahari Government Hospital is proud to be a Bima-registered hospital. Eligible patients can access medical treatment using their government health insurance card. Unlike many private hospitals, <strong>we fully support the national health insurance programme</strong>.</p>
+<!-- ===================== DOCTORS ===================== -->
+<section id="doctors" class="bg-white py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Our Team</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-3">Meet Our Doctors</h2>
+    <p class="text-gray-500 max-w-xl mb-10">Our experienced doctors are committed to providing the best care to every patient.</p>
 
-    <div class="bima-grid">
-      <div class="bima-info">
-        <h3>How Bima Works Here</h3>
-        <ul class="about-list">
-          <li>🛡️ Bima service is available for OPD consultations</li>
-          <li>🛡️ Laboratory and diagnostic tests are covered</li>
-          <li>🛡️ Prescribed medicines from pharmacy are included</li>
-          <li>🛡️ Selected surgical and inpatient treatments covered</li>
-          <li>🛡️ Maternity and child care services are eligible</li>
-          <li>📄 Bring your Bima card, citizenship card, and hospital referral documents</li>
-          <li>📄 Insurance must be active and valid on the date of visit</li>
-          <li>📄 Go to the Bima counter at the reception before consulting a doctor</li>
+    <div class="flex flex-wrap gap-6 justify-center">
+
+      <!-- Dr. Ram Kumar -->
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-7 text-center flex-1 min-w-[180px] max-w-[240px] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-6xl bg-blue-100 rounded-full w-24 h-24 leading-[96px] mx-auto mb-4 border-2 border-blue-300">👨‍⚕️</div>
+        <h3 class="font-extrabold text-hospital-dark text-lg mb-2">Dr. Ram Kumar</h3>
+        <span class="inline-block bg-blue-100 text-hospital-blue text-xs font-bold px-3 py-1 rounded-full mb-3">General Physician</span>
+        <p class="text-gray-500 text-sm">📅 Sun – Fri</p>
+        <p class="text-gray-500 text-sm">⏰ 9:00 AM – 4:00 PM</p>
+        <p class="text-gray-400 text-xs mt-1">🚪 Room 101</p>
+        <a href="#token-booking" class="inline-block mt-4 bg-hospital-blue hover:bg-blue-800 text-white font-bold text-sm px-5 py-2 rounded-md transition-all">Book Appointment</a>
+      </div>
+
+      <!-- Dr. Sita Sharma -->
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-7 text-center flex-1 min-w-[180px] max-w-[240px] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-6xl bg-purple-100 rounded-full w-24 h-24 leading-[96px] mx-auto mb-4 border-2 border-purple-300">👩‍⚕️</div>
+        <h3 class="font-extrabold text-hospital-dark text-lg mb-2">Dr. Sita Sharma</h3>
+        <span class="inline-block bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Gynaecologist</span>
+        <p class="text-gray-500 text-sm">📅 Sun – Thu</p>
+        <p class="text-gray-500 text-sm">⏰ 10:00 AM – 5:00 PM</p>
+        <p class="text-gray-400 text-xs mt-1">🚪 Room 202</p>
+        <a href="#token-booking" class="inline-block mt-4 bg-hospital-blue hover:bg-blue-800 text-white font-bold text-sm px-5 py-2 rounded-md transition-all">Book Appointment</a>
+      </div>
+
+      <!-- Dr. Anil Thapa -->
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-7 text-center flex-1 min-w-[180px] max-w-[240px] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-6xl bg-green-100 rounded-full w-24 h-24 leading-[96px] mx-auto mb-4 border-2 border-green-300">👨‍⚕️</div>
+        <h3 class="font-extrabold text-hospital-dark text-lg mb-2">Dr. Anil Thapa</h3>
+        <span class="inline-block bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Paediatrician</span>
+        <p class="text-gray-500 text-sm">📅 Sun – Fri</p>
+        <p class="text-gray-500 text-sm">⏰ 9:30 AM – 4:30 PM</p>
+        <p class="text-gray-400 text-xs mt-1">🚪 Room 105</p>
+        <a href="#token-booking" class="inline-block mt-4 bg-hospital-blue hover:bg-blue-800 text-white font-bold text-sm px-5 py-2 rounded-md transition-all">Book Appointment</a>
+      </div>
+
+      <!-- Dr. Maya Rai -->
+      <div class="bg-blue-50 border border-blue-100 rounded-xl p-7 text-center flex-1 min-w-[180px] max-w-[240px] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all">
+        <div class="text-6xl bg-orange-100 rounded-full w-24 h-24 leading-[96px] mx-auto mb-4 border-2 border-orange-300">👩‍⚕️</div>
+        <h3 class="font-extrabold text-hospital-dark text-lg mb-2">Dr. Maya Rai</h3>
+        <span class="inline-block bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full mb-3">Dental Surgeon</span>
+        <p class="text-gray-500 text-sm">📅 Mon – Fri</p>
+        <p class="text-gray-500 text-sm">⏰ 11:00 AM – 2:00 PM</p>
+        <p class="text-gray-400 text-xs mt-1">🚪 Room 303</p>
+        <a href="#token-booking" class="inline-block mt-4 bg-hospital-blue hover:bg-blue-800 text-white font-bold text-sm px-5 py-2 rounded-md transition-all">Book Appointment</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BIMA ===================== -->
+<section id="bima" class="py-16 px-5 border-l-8 border-hospital-teal" style="background: linear-gradient(120deg, #e8f5e9 0%, #b2dfdb 100%);">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-green-100 text-green-800 text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Health Insurance</span>
+    <h2 class="text-4xl font-extrabold text-green-900 mb-4">Bima / Health Insurance Service</h2>
+    <p class="text-gray-700 max-w-2xl mb-8">Itahari Government Hospital is proud to be a Bima-registered hospital. Eligible patients can access medical treatment using their government health insurance card. <strong>We fully support the national health insurance programme.</strong></p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h3 class="text-green-800 font-bold text-lg mb-4">How Bima Works Here</h3>
+        <ul class="divide-y divide-green-200">
+          <li class="py-2 text-sm text-gray-700">🛡️ Bima service is available for OPD consultations</li>
+          <li class="py-2 text-sm text-gray-700">🛡️ Laboratory and diagnostic tests are covered</li>
+          <li class="py-2 text-sm text-gray-700">🛡️ Prescribed medicines from pharmacy are included</li>
+          <li class="py-2 text-sm text-gray-700">🛡️ Selected surgical and inpatient treatments covered</li>
+          <li class="py-2 text-sm text-gray-700">🛡️ Maternity and child care services are eligible</li>
+          <li class="py-2 text-sm text-gray-700">📄 Bring your Bima card, citizenship card, and referral documents</li>
+          <li class="py-2 text-sm text-gray-700">📄 Insurance must be active and valid on the date of visit</li>
+          <li class="py-2 text-sm text-gray-700">📄 Go to the Bima counter at reception before consulting a doctor</li>
         </ul>
       </div>
 
-      <div class="bima-table-wrap">
-        <h3>Bima Coverage Table</h3>
-        <div class="table-scroll">
-          <table class="styled-table">
-            <thead>
+      <div>
+        <h3 class="text-green-800 font-bold text-lg mb-4">Bima Coverage Table</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[500px] bg-white rounded-xl overflow-hidden shadow-md text-sm">
+            <thead class="bg-hospital-dark text-white">
               <tr>
-                <th>Service</th>
-                <th>Bima Available</th>
-                <th>Required Document</th>
-                <th>Remarks</th>
+                <th class="px-4 py-3 text-left">Service</th>
+                <th class="px-4 py-3 text-left">Bima</th>
+                <th class="px-4 py-3 text-left">Document</th>
+                <th class="px-4 py-3 text-left">Remarks</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>OPD Consultation</td>
-                <td><span class="badge-yes">Yes</span></td>
-                <td>Bima Card, Citizenship</td>
-                <td>All departments</td>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">OPD Consultation</td>
+                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 font-bold text-xs px-3 py-1 rounded-full">Yes</span></td>
+                <td class="px-4 py-3">Bima Card, Citizenship</td>
+                <td class="px-4 py-3">All departments</td>
               </tr>
-              <tr>
-                <td>Laboratory Tests</td>
-                <td><span class="badge-yes">Yes</span></td>
-                <td>Bima Card, Doctor Referral</td>
-                <td>Standard tests only</td>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">Laboratory Tests</td>
+                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 font-bold text-xs px-3 py-1 rounded-full">Yes</span></td>
+                <td class="px-4 py-3">Bima Card, Referral</td>
+                <td class="px-4 py-3">Standard tests only</td>
               </tr>
-              <tr>
-                <td>Pharmacy / Medicines</td>
-                <td><span class="badge-yes">Yes</span></td>
-                <td>Bima Card, Prescription</td>
-                <td>Listed medicines only</td>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">Pharmacy</td>
+                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 font-bold text-xs px-3 py-1 rounded-full">Yes</span></td>
+                <td class="px-4 py-3">Bima Card, Prescription</td>
+                <td class="px-4 py-3">Listed medicines only</td>
               </tr>
-              <tr>
-                <td>X-Ray / Ultrasound</td>
-                <td><span class="badge-yes">Yes</span></td>
-                <td>Bima Card, Referral Form</td>
-                <td>As per Bima limit</td>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">X-Ray / Ultrasound</td>
+                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 font-bold text-xs px-3 py-1 rounded-full">Yes</span></td>
+                <td class="px-4 py-3">Bima Card, Referral</td>
+                <td class="px-4 py-3">As per Bima limit</td>
               </tr>
-              <tr>
-                <td>Inpatient / Surgery</td>
-                <td><span class="badge-partial">Partial</span></td>
-                <td>Bima Card, Citizenship, ID</td>
-                <td>Selected procedures</td>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">Inpatient / Surgery</td>
+                <td class="px-4 py-3"><span class="bg-orange-100 text-orange-800 font-bold text-xs px-3 py-1 rounded-full">Partial</span></td>
+                <td class="px-4 py-3">Bima Card, ID</td>
+                <td class="px-4 py-3">Selected procedures</td>
               </tr>
-              <tr>
-                <td>Emergency</td>
-                <td><span class="badge-no">No</span></td>
-                <td>—</td>
-                <td>Free emergency care provided</td>
+              <tr class="hover:bg-blue-50 transition-colors">
+                <td class="px-4 py-3">Emergency</td>
+                <td class="px-4 py-3"><span class="bg-red-100 text-red-800 font-bold text-xs px-3 py-1 rounded-full">No</span></td>
+                <td class="px-4 py-3">—</td>
+                <td class="px-4 py-3">Free emergency care</td>
               </tr>
             </tbody>
           </table>
@@ -371,235 +342,31 @@
   </div>
 </section>
 
-<!-- ===================== TOKEN BOOKING SECTION ===================== -->
-<section class="section-pad" id="token-booking" style="background:#f0f6ff;">
-  <div class="container">
-    <div class="section-label">Queue Management</div>
-    <h2 class="section-title">Online Token Booking</h2>
-    <p class="section-desc">Book your appointment token online to avoid long queues at the hospital reception.</p>
+<!-- ===================== TOKEN BOOKING ===================== -->
+<section id="token-booking" class="bg-blue-50 py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-100 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Queue Management</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-3">Online Token Booking</h2>
+    <p class="text-gray-500 max-w-xl mb-10">Book your appointment token online to avoid long queues at the hospital reception.</p>
 
-    <div class="token-layout">
-      <!-- Token booking form -->
-      <div class="token-form-wrap">
-        <form class="hospital-form" action="#" method="get">
-          <h3 class="form-title">Book Your Token</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <!-- Form -->
+      <div class="bg-white rounded-xl p-8 shadow-md border border-blue-100">
+        <h3 class="text-hospital-dark font-extrabold text-xl mb-6 pb-3 border-b-2 border-blue-50">Book Your Token</h3>
 
-          <div class="form-group">
-            <label for="token-name">Patient Full Name *</label>
-            <input type="text" id="token-name" name="patientName" placeholder="Enter full name" required />
-          </div>
-
-          <div class="form-group">
-            <label for="token-phone">Phone Number *</label>
-            <input type="tel" id="token-phone" name="phone" placeholder="e.g. 9800000000" required />
-          </div>
-
-          <div class="form-group">
-            <label for="token-dept">Department *</label>
-            <select id="token-dept" name="department" required>
-              <option value="">-- Select Department --</option>
-              <option value="opd">General OPD</option>
-              <option value="gyne">Gynaecology</option>
-              <option value="ped">Paediatrics</option>
-              <option value="dental">Dental</option>
-              <option value="emergency">Emergency</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="token-doctor">Doctor Name *</label>
-            <select id="token-doctor" name="doctor" required>
-              <option value="">-- Select Doctor --</option>
-              <option value="ram">Dr. Ram Kumar – General Physician</option>
-              <option value="sita">Dr. Sita Sharma – Gynaecologist</option>
-              <option value="anil">Dr. Anil Thapa – Paediatrician</option>
-              <option value="maya">Dr. Maya Rai – Dental Surgeon</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="token-date">Appointment Date *</label>
-              <input type="date" id="token-date" name="date" required />
-            </div>
-            <div class="form-group">
-              <label for="token-time">Preferred Time *</label>
-              <input type="time" id="token-time" name="time" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Bima / Insurance Available?</label>
-            <div class="radio-group">
-              <label><input type="radio" name="bima" value="yes" /> Yes</label>
-              <label><input type="radio" name="bima" value="no" checked /> No</label>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="token-bima-num">Bima Number (if applicable)</label>
-            <input type="text" id="token-bima-num" name="bimaNumber" placeholder="Enter Bima card number" />
-          </div>
-
-          <div class="form-buttons">
-            <button type="submit" class="btn btn-primary">📋 Submit Token Booking</button>
-            <button type="reset" class="btn btn-outline">↺ Reset</button>
-          </div>
-        </form>
-      </div>
-
-      <!-- Sample token card -->
-      <div>
-        <h3 style="text-align:center;color:#003f7f;margin-bottom:8px;">Sample Token Card</h3>
-        <p style="text-align:center;color:#666;font-size:0.88rem;margin-bottom:0;">This is how your token receipt will look</p>
-
-        <div class="token-card">
-          <h3>🏥 Itahari Government Hospital</h3>
-          <p class="hospital-sub">Itahari, Sunsari, Nepal | Bima Accepted</p>
-
-          <!-- Token number badge inline styled -->
-          <div style="text-align:center;margin:14px 0;">
-            <span style="background:#003f7f;color:#fff;font-size:1.6rem;font-weight:800;padding:10px 32px;border-radius:8px;letter-spacing:3px;">A-102</span>
-            <p style="font-size:0.78rem;color:#888;margin-top:6px;">Token Number</p>
-          </div>
-
-          <table>
-            <tr><td>Patient Name</td><td>Example Patient</td></tr>
-            <tr><td>Department</td><td>General OPD</td></tr>
-            <tr><td>Doctor</td><td>Dr. Ram Kumar</td></tr>
-            <tr><td>Date</td><td>25 June 2026</td></tr>
-            <tr><td>Time</td><td>10:30 AM</td></tr>
-            <tr><td>Queue Status</td><td><span style="color:#f57c00;font-weight:700;">⏳ Waiting</span></td></tr>
-            <tr><td>Bima Status</td><td><span style="color:#2e7d32;font-weight:700;">✅ Available</span></td></tr>
-          </table>
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-name">Patient Full Name *</label>
+          <input id="token-name" type="text" placeholder="Enter full name" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
         </div>
 
-        <!-- Token information list -->
-        <div class="token-info-list">
-          <h4>📌 Important Token Information</h4>
-          <ul>
-            <li>Patients should arrive at least 15 minutes before their scheduled time.</li>
-            <li>Token number is valid only for the selected date.</li>
-            <li>Bima patients must bring their Bima card and citizenship card.</li>
-            <li>Emergency patients do not need to wait for a token.</li>
-            <li>Patients should report to the reception desk after arriving.</li>
-          </ul>
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-phone">Phone Number *</label>
+          <input id="token-phone" type="tel" placeholder="e.g. 9800000000" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===================== TOKEN STATUS SECTION ===================== -->
-<section class="section-pad" id="token-status">
-  <div class="container">
-    <div class="section-label">Live Queue</div>
-    <h2 class="section-title">Current Token Status</h2>
-    <p class="section-desc">Check which token number is currently being served in each department.</p>
-
-    <div class="status-grid">
-
-      <div class="status-card status-serving">
-        <div class="status-dept">General OPD</div>
-        <div class="status-label">Now Serving</div>
-        <div class="status-token" style="background:#0077cc;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">A-087</div>
-        <div class="status-info">Dr. Ram Kumar | Room 101</div>
-      </div>
-
-      <div class="status-card status-serving" style="border-color:#7b1fa2;">
-        <div class="status-dept">Gynaecology</div>
-        <div class="status-label">Now Serving</div>
-        <div class="status-token" style="background:#7b1fa2;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">B-021</div>
-        <div class="status-info">Dr. Sita Sharma | Room 202</div>
-      </div>
-
-      <div class="status-card status-serving" style="border-color:#00897b;">
-        <div class="status-dept">Paediatrics</div>
-        <div class="status-label">Now Serving</div>
-        <div class="status-token" style="background:#00897b;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">C-015</div>
-        <div class="status-info">Dr. Anil Thapa | Room 105</div>
-      </div>
-
-      <div class="status-card status-serving" style="border-color:#e65100;">
-        <div class="status-dept">Dental</div>
-        <div class="status-label">Now Serving</div>
-        <div class="status-token" style="background:#e65100;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.6rem;font-weight:800;display:inline-block;margin:8px 0;">D-008</div>
-        <div class="status-info">Dr. Maya Rai | Room 303</div>
-      </div>
-
-      <div class="status-card status-emergency">
-        <div class="status-dept">Emergency</div>
-        <div class="status-label" style="color:#e53935;">🚨 Always Open</div>
-        <div class="status-token" style="background:#e53935;color:#fff;padding:10px 22px;border-radius:8px;font-size:1.2rem;font-weight:800;display:inline-block;margin:8px 0;">24 / 7</div>
-        <div class="status-info">Emergency Block | No Token Needed</div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PATIENT REGISTRATION ===================== -->
-<section class="section-pad" id="registration" style="background:#f8faff;">
-  <div class="container">
-    <div class="section-label">New Patient</div>
-    <h2 class="section-title">Patient Registration</h2>
-    <p class="section-desc">Register as a new patient to receive a unique hospital ID and streamline your future visits.</p>
-
-    <form class="hospital-form reg-form" action="#" method="get">
-
-      <!-- Two-column grid row -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="reg-name">Full Name *</label>
-          <input type="text" id="reg-name" name="fullName" placeholder="Enter full name" required />
-        </div>
-        <div class="form-group">
-          <label for="reg-dob">Date of Birth *</label>
-          <input type="date" id="reg-dob" name="dob" required />
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Gender *</label>
-          <div class="radio-group">
-            <label><input type="radio" name="gender" value="male" required /> Male</label>
-            <label><input type="radio" name="gender" value="female" /> Female</label>
-            <label><input type="radio" name="gender" value="other" /> Other</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="reg-blood">Blood Group</label>
-          <select id="reg-blood" name="bloodGroup">
-            <option value="">-- Select --</option>
-            <option>A+</option><option>A−</option>
-            <option>B+</option><option>B−</option>
-            <option>O+</option><option>O−</option>
-            <option>AB+</option><option>AB−</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="reg-phone">Phone Number *</label>
-          <input type="tel" id="reg-phone" name="phone" placeholder="e.g. 9800000000" required />
-        </div>
-        <div class="form-group">
-          <label for="reg-email">Email Address</label>
-          <input type="email" id="reg-email" name="email" placeholder="example@email.com" />
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="reg-address">Address *</label>
-        <input type="text" id="reg-address" name="address" placeholder="Ward, Tole, Municipality, District" required />
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="reg-dept">Department Needed *</label>
-          <select id="reg-dept" name="department" required>
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-dept">Department *</label>
+          <select id="token-dept" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all">
             <option value="">-- Select Department --</option>
             <option>General OPD</option>
             <option>Gynaecology</option>
@@ -608,288 +375,419 @@
             <option>Emergency</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Insurance / Bima Available?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="regBima" value="yes" /> Yes</label>
-            <label><input type="radio" name="regBima" value="no" checked /> No</label>
+
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-doctor">Doctor Name *</label>
+          <select id="token-doctor" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all">
+            <option value="">-- Select Doctor --</option>
+            <option>Dr. Ram Kumar – General Physician</option>
+            <option>Dr. Sita Sharma – Gynaecologist</option>
+            <option>Dr. Anil Thapa – Paediatrician</option>
+            <option>Dr. Maya Rai – Dental Surgeon</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 mb-5">
+          <div>
+            <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-date">Appointment Date *</label>
+            <input id="token-date" type="date" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-time">Preferred Time *</label>
+            <input id="token-time" type="time" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Bima / Insurance?</label>
+          <div class="flex gap-5 mt-1">
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="bima" value="yes" /> Yes</label>
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="bima" value="no" checked /> No</label>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <label class="block text-xs font-bold text-hospital-dark mb-2" for="token-bima-num">Bima Number (if applicable)</label>
+          <input id="token-bima-num" type="text" placeholder="Enter Bima card number" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <button class="bg-hospital-blue hover:bg-blue-800 text-white font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5 text-sm">📋 Submit Token Booking</button>
+          <button class="border-2 border-hospital-blue text-hospital-blue hover:bg-hospital-blue hover:text-white font-bold px-7 py-3 rounded-md transition-all text-sm">↺ Reset</button>
+        </div>
+      </div>
+
+      <!-- Sample Token + Info -->
+      <div>
+        <h3 class="text-center text-hospital-dark font-bold text-lg mb-1">Sample Token Card</h3>
+        <p class="text-center text-gray-400 text-sm mb-5">This is how your token receipt will look</p>
+
+        <div class="bg-white border-2 border-hospital-blue rounded-xl p-8 max-w-sm mx-auto shadow-lg">
+          <h3 class="text-hospital-dark font-extrabold text-center text-base mb-1">🏥 Itahari Government Hospital</h3>
+          <p class="text-gray-400 text-xs text-center mb-4">Itahari, Sunsari, Nepal | Bima Accepted</p>
+          <div class="text-center my-5">
+            <span class="inline-block bg-hospital-dark text-white text-3xl font-extrabold px-8 py-3 rounded-lg tracking-widest">A-102</span>
+            <p class="text-xs text-gray-400 mt-2">Token Number</p>
+          </div>
+          <table class="w-full text-sm">
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark w-[45%]">Patient Name</td><td class="py-2 text-gray-600">Example Patient</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark">Department</td><td class="py-2 text-gray-600">General OPD</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark">Doctor</td><td class="py-2 text-gray-600">Dr. Ram Kumar</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark">Date</td><td class="py-2 text-gray-600">25 June 2026</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark">Time</td><td class="py-2 text-gray-600">10:30 AM</td></tr>
+            <tr class="border-b border-gray-100"><td class="py-2 font-semibold text-hospital-dark">Queue</td><td class="py-2 text-orange-600 font-bold">⏳ Waiting</td></tr>
+            <tr><td class="py-2 font-semibold text-hospital-dark">Bima</td><td class="py-2 text-green-700 font-bold">✅ Available</td></tr>
+          </table>
+        </div>
+
+        <div class="mt-6 bg-white rounded-xl p-5 shadow-sm border border-blue-100">
+          <h4 class="text-hospital-dark font-bold text-sm mb-3">📌 Important Token Information</h4>
+          <ul class="list-disc pl-5 space-y-1">
+            <li class="text-xs text-gray-500">Patients should arrive at least 15 minutes before their scheduled time.</li>
+            <li class="text-xs text-gray-500">Token number is valid only for the selected date.</li>
+            <li class="text-xs text-gray-500">Bima patients must bring their Bima card and citizenship card.</li>
+            <li class="text-xs text-gray-500">Emergency patients do not need to wait for a token.</li>
+            <li class="text-xs text-gray-500">Report to the reception desk after arriving.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOKEN STATUS ===================== -->
+<section id="token-status" class="bg-white py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Live Queue</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-3">Current Token Status</h2>
+    <p class="text-gray-500 max-w-xl mb-10">Check which token number is currently being served in each department.</p>
+
+    <div class="flex flex-wrap gap-5 justify-center">
+
+      <div class="bg-white border-2 border-hospital-blue rounded-xl p-6 text-center flex-1 min-w-[160px] max-w-[210px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="font-bold text-hospital-dark text-sm mb-1">General OPD</div>
+        <div class="text-hospital-blue text-xs font-bold uppercase tracking-widest mb-2">Now Serving</div>
+        <span class="inline-block bg-hospital-blue text-white text-2xl font-extrabold px-6 py-2 rounded-lg my-2 tracking-widest">A-087</span>
+        <div class="text-gray-400 text-xs mt-2">Dr. Ram Kumar | Room 101</div>
+      </div>
+
+      <div class="bg-white border-2 border-purple-700 rounded-xl p-6 text-center flex-1 min-w-[160px] max-w-[210px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="font-bold text-hospital-dark text-sm mb-1">Gynaecology</div>
+        <div class="text-purple-700 text-xs font-bold uppercase tracking-widest mb-2">Now Serving</div>
+        <span class="inline-block bg-purple-700 text-white text-2xl font-extrabold px-6 py-2 rounded-lg my-2 tracking-widest">B-021</span>
+        <div class="text-gray-400 text-xs mt-2">Dr. Sita Sharma | Room 202</div>
+      </div>
+
+      <div class="bg-white border-2 border-hospital-teal rounded-xl p-6 text-center flex-1 min-w-[160px] max-w-[210px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="font-bold text-hospital-dark text-sm mb-1">Paediatrics</div>
+        <div class="text-hospital-teal text-xs font-bold uppercase tracking-widest mb-2">Now Serving</div>
+        <span class="inline-block bg-hospital-teal text-white text-2xl font-extrabold px-6 py-2 rounded-lg my-2 tracking-widest">C-015</span>
+        <div class="text-gray-400 text-xs mt-2">Dr. Anil Thapa | Room 105</div>
+      </div>
+
+      <div class="bg-white border-2 border-orange-700 rounded-xl p-6 text-center flex-1 min-w-[160px] max-w-[210px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="font-bold text-hospital-dark text-sm mb-1">Dental</div>
+        <div class="text-orange-700 text-xs font-bold uppercase tracking-widest mb-2">Now Serving</div>
+        <span class="inline-block bg-orange-700 text-white text-2xl font-extrabold px-6 py-2 rounded-lg my-2 tracking-widest">D-008</span>
+        <div class="text-gray-400 text-xs mt-2">Dr. Maya Rai | Room 303</div>
+      </div>
+
+      <div class="bg-red-50 border-2 border-hospital-red rounded-xl p-6 text-center flex-1 min-w-[160px] max-w-[210px] shadow-md hover:shadow-xl hover:-translate-y-1 transition-all">
+        <div class="font-bold text-hospital-dark text-sm mb-1">Emergency</div>
+        <div class="text-hospital-red text-xs font-bold uppercase tracking-widest mb-2">🚨 Always Open</div>
+        <span class="inline-block bg-hospital-red text-white text-xl font-extrabold px-6 py-2 rounded-lg my-2">24 / 7</span>
+        <div class="text-gray-400 text-xs mt-2">Emergency Block | No Token Needed</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PATIENT REGISTRATION ===================== -->
+<section id="registration" class="bg-blue-50 py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-100 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">New Patient</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-3">Patient Registration</h2>
+    <p class="text-gray-500 max-w-xl mb-10">Register as a new patient to receive a unique hospital ID and streamline your future visits.</p>
+
+    <div class="bg-white rounded-xl p-8 shadow-md border border-blue-100 max-w-3xl mx-auto">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Full Name *</label>
+          <input type="text" placeholder="Enter full name" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Date of Birth *</label>
+          <input type="date" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Gender *</label>
+          <div class="flex gap-5 mt-1">
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="gender" value="male" /> Male</label>
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="gender" value="female" /> Female</label>
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="gender" value="other" /> Other</label>
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Blood Group</label>
+          <select class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all">
+            <option value="">-- Select --</option>
+            <option>A+</option><option>A−</option><option>B+</option><option>B−</option>
+            <option>O+</option><option>O−</option><option>AB+</option><option>AB−</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Phone Number *</label>
+          <input type="tel" placeholder="e.g. 9800000000" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Email Address</label>
+          <input type="email" placeholder="example@email.com" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <label class="block text-xs font-bold text-hospital-dark mb-2">Address *</label>
+        <input type="text" placeholder="Ward, Tole, Municipality, District" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Department Needed *</label>
+          <select class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all">
+            <option value="">-- Select --</option>
+            <option>General OPD</option><option>Gynaecology</option>
+            <option>Paediatrics</option><option>Dental</option><option>Emergency</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Insurance / Bima?</label>
+          <div class="flex gap-5 mt-1">
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="regBima" value="yes" /> Yes</label>
+            <label class="flex items-center gap-2 text-sm cursor-pointer"><input type="radio" name="regBima" value="no" checked /> No</label>
           </div>
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="reg-bima">Bima Number (if applicable)</label>
-        <input type="text" id="reg-bima" name="bimaNumber" placeholder="Enter Bima card number" />
+      <div class="mb-5">
+        <label class="block text-xs font-bold text-hospital-dark mb-2">Bima Number (if applicable)</label>
+        <input type="text" placeholder="Enter Bima card number" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
       </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="reg-ec-name">Emergency Contact Name *</label>
-          <input type="text" id="reg-ec-name" name="emergencyName" placeholder="Full name" required />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Emergency Contact Name *</label>
+          <input type="text" placeholder="Full name" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
         </div>
-        <div class="form-group">
-          <label for="reg-ec-num">Emergency Contact Number *</label>
-          <input type="tel" id="reg-ec-num" name="emergencyPhone" placeholder="e.g. 9800000000" required />
+        <div>
+          <label class="block text-xs font-bold text-hospital-dark mb-2">Emergency Contact Number *</label>
+          <input type="tel" placeholder="e.g. 9800000000" class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all" />
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="reg-symptoms">Symptoms / Problem *</label>
-        <textarea id="reg-symptoms" name="symptoms" rows="4" placeholder="Describe your symptoms or the reason for your visit..." required></textarea>
+      <div class="mb-6">
+        <label class="block text-xs font-bold text-hospital-dark mb-2">Symptoms / Problem *</label>
+        <textarea rows="4" placeholder="Describe your symptoms or the reason for your visit..." class="w-full px-4 py-2.5 border border-blue-200 rounded-md bg-blue-50 focus:outline-none focus:border-hospital-blue focus:ring-2 focus:ring-blue-200 focus:bg-white text-sm transition-all resize-y"></textarea>
       </div>
 
-      <div class="form-buttons">
-        <button type="submit" class="btn btn-primary">✅ Submit Registration</button>
-        <button type="reset" class="btn btn-outline">↺ Reset Form</button>
+      <div class="flex flex-wrap gap-3">
+        <button class="bg-hospital-blue hover:bg-blue-800 text-white font-bold px-7 py-3 rounded-md transition-all hover:-translate-y-0.5 text-sm">✅ Submit Registration</button>
+        <button class="border-2 border-hospital-blue text-hospital-blue hover:bg-hospital-blue hover:text-white font-bold px-7 py-3 rounded-md transition-all text-sm">↺ Reset Form</button>
       </div>
-
-    </form>
+    </div>
   </div>
 </section>
 
 <!-- ===================== DOCTOR SCHEDULE TABLE ===================== -->
-<section class="section-pad" id="schedule">
-  <div class="container">
-    <div class="section-label">Schedule</div>
-    <h2 class="section-title">Doctor Availability Schedule</h2>
-    <div class="table-scroll">
-      <table class="styled-table">
-        <thead>
+<section id="schedule" class="py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Schedule</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-6">Doctor Availability Schedule</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[700px] bg-white rounded-xl overflow-hidden shadow-md text-sm">
+        <thead class="bg-hospital-dark text-white">
           <tr>
-            <th>Token</th>
-            <th>Department</th>
-            <th>Doctor Name</th>
-            <th>Available Days</th>
-            <th>Morning Time</th>
-            <th>Afternoon Time</th>
-            <th>Max Tokens/Day</th>
-            <th>Room No.</th>
+            <th class="px-4 py-3 text-left">Token</th>
+            <th class="px-4 py-3 text-left">Department</th>
+            <th class="px-4 py-3 text-left">Doctor</th>
+            <th class="px-4 py-3 text-left">Days</th>
+            <th class="px-4 py-3 text-left">Morning</th>
+            <th class="px-4 py-3 text-left">Afternoon</th>
+            <th class="px-4 py-3 text-left">Max/Day</th>
+            <th class="px-4 py-3 text-left">Room</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><span style="background:#003f7f;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">A</span></td>
-            <td>General OPD</td>
-            <td>Dr. Ram Kumar</td>
-            <td>Sun – Fri</td>
-            <td>9:00 AM – 12:00 PM</td>
-            <td>2:00 PM – 4:00 PM</td>
-            <td>50</td>
-            <td>Room 101</td>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3"><span class="bg-hospital-dark text-white text-xs font-bold px-3 py-1 rounded">A</span></td>
+            <td class="px-4 py-3">General OPD</td><td class="px-4 py-3">Dr. Ram Kumar</td>
+            <td class="px-4 py-3">Sun – Fri</td><td class="px-4 py-3">9:00 – 12:00 PM</td>
+            <td class="px-4 py-3">2:00 – 4:00 PM</td><td class="px-4 py-3">50</td><td class="px-4 py-3">Room 101</td>
           </tr>
-          <tr>
-            <td><span style="background:#7b1fa2;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">B</span></td>
-            <td>Gynaecology</td>
-            <td>Dr. Sita Sharma</td>
-            <td>Sun – Thu</td>
-            <td>10:00 AM – 1:00 PM</td>
-            <td>3:00 PM – 5:00 PM</td>
-            <td>30</td>
-            <td>Room 202</td>
+          <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3"><span class="bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded">B</span></td>
+            <td class="px-4 py-3">Gynaecology</td><td class="px-4 py-3">Dr. Sita Sharma</td>
+            <td class="px-4 py-3">Sun – Thu</td><td class="px-4 py-3">10:00 – 1:00 PM</td>
+            <td class="px-4 py-3">3:00 – 5:00 PM</td><td class="px-4 py-3">30</td><td class="px-4 py-3">Room 202</td>
           </tr>
-          <tr>
-            <td><span style="background:#00897b;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">C</span></td>
-            <td>Paediatrics</td>
-            <td>Dr. Anil Thapa</td>
-            <td>Sun – Fri</td>
-            <td>9:30 AM – 12:30 PM</td>
-            <td>2:30 PM – 4:30 PM</td>
-            <td>35</td>
-            <td>Room 105</td>
+          <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3"><span class="bg-hospital-teal text-white text-xs font-bold px-3 py-1 rounded">C</span></td>
+            <td class="px-4 py-3">Paediatrics</td><td class="px-4 py-3">Dr. Anil Thapa</td>
+            <td class="px-4 py-3">Sun – Fri</td><td class="px-4 py-3">9:30 – 12:30 PM</td>
+            <td class="px-4 py-3">2:30 – 4:30 PM</td><td class="px-4 py-3">35</td><td class="px-4 py-3">Room 105</td>
           </tr>
-          <tr>
-            <td><span style="background:#e65100;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">D</span></td>
-            <td>Dental</td>
-            <td>Dr. Maya Rai</td>
-            <td>Mon – Fri</td>
-            <td>11:00 AM – 2:00 PM</td>
-            <td>Not Available</td>
-            <td>25</td>
-            <td>Room 303</td>
+          <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3"><span class="bg-orange-700 text-white text-xs font-bold px-3 py-1 rounded">D</span></td>
+            <td class="px-4 py-3">Dental</td><td class="px-4 py-3">Dr. Maya Rai</td>
+            <td class="px-4 py-3">Mon – Fri</td><td class="px-4 py-3">11:00 – 2:00 PM</td>
+            <td class="px-4 py-3 text-gray-400">Not Available</td><td class="px-4 py-3">25</td><td class="px-4 py-3">Room 303</td>
           </tr>
-          <tr>
-            <td><span style="background:#e53935;color:#fff;padding:3px 10px;border-radius:4px;font-weight:700;">E</span></td>
-            <td>Emergency</td>
-            <td>Emergency Doctor</td>
-            <td>Every Day</td>
-            <td>24 Hours</td>
-            <td>24 Hours</td>
-            <td>Unlimited</td>
-            <td>Emergency Block</td>
+          <tr class="hover:bg-blue-50 transition-colors">
+            <td class="px-4 py-3"><span class="bg-hospital-red text-white text-xs font-bold px-3 py-1 rounded">E</span></td>
+            <td class="px-4 py-3">Emergency</td><td class="px-4 py-3">Emergency Doctor</td>
+            <td class="px-4 py-3">Every Day</td><td class="px-4 py-3">24 Hours</td>
+            <td class="px-4 py-3">24 Hours</td><td class="px-4 py-3">Unlimited</td><td class="px-4 py-3">Emergency Block</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="table-note">⚠️ Doctor schedules may change due to emergency duty, leave, or government hospital programmes. Please contact the reception desk before visiting.</p>
+    <div class="mt-5 bg-yellow-50 border-l-4 border-yellow-400 rounded px-4 py-3 text-sm text-gray-600">
+      ⚠️ Doctor schedules may change due to emergency duty, leave, or government programmes. Please contact the reception before visiting.
+    </div>
   </div>
 </section>
 
-<!-- ===================== DEPARTMENT SCHEDULE TABLE ===================== -->
-<section class="section-pad" style="background:#f0f6ff;" id="dept-schedule">
-  <div class="container">
-    <div class="section-label">Departments</div>
-    <h2 class="section-title">Hospital Department Schedule</h2>
-    <div class="table-scroll">
-      <table class="styled-table">
-        <thead>
+<!-- ===================== DEPT SCHEDULE ===================== -->
+<section id="dept-schedule" class="bg-blue-50 py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-100 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Departments</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-6">Hospital Department Schedule</h2>
+    <div class="overflow-x-auto">
+      <table class="w-full min-w-[500px] bg-white rounded-xl overflow-hidden shadow-md text-sm">
+        <thead class="bg-hospital-dark text-white">
           <tr>
-            <th>Department</th>
-            <th>Doctor Name</th>
-            <th>Available Days</th>
-            <th>Time</th>
-            <th>Room Number</th>
+            <th class="px-4 py-3 text-left">Department</th>
+            <th class="px-4 py-3 text-left">Doctor / Staff</th>
+            <th class="px-4 py-3 text-left">Days</th>
+            <th class="px-4 py-3 text-left">Time</th>
+            <th class="px-4 py-3 text-left">Room</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>General OPD</td>
-            <td>Dr. Ram Kumar</td>
-            <td>Sun – Fri</td>
-            <td>9:00 AM – 4:00 PM</td>
-            <td>Room 101</td>
-          </tr>
-          <tr>
-            <td>Gynaecology</td>
-            <td>Dr. Sita Sharma</td>
-            <td>Sun – Thu</td>
-            <td>10:00 AM – 5:00 PM</td>
-            <td>Room 202</td>
-          </tr>
-          <tr>
-            <td>Paediatrics</td>
-            <td>Dr. Anil Thapa</td>
-            <td>Sun – Fri</td>
-            <td>9:30 AM – 4:30 PM</td>
-            <td>Room 105</td>
-          </tr>
-          <tr>
-            <td>Dental</td>
-            <td>Dr. Maya Rai</td>
-            <td>Mon – Fri</td>
-            <td>11:00 AM – 2:00 PM</td>
-            <td>Room 303</td>
-          </tr>
-          <tr>
-            <td>Emergency</td>
-            <td>Emergency Doctor</td>
-            <td>Every Day</td>
-            <td>24 Hours</td>
-            <td>Emergency Block</td>
-          </tr>
-          <tr>
-            <td>Laboratory</td>
-            <td>Lab Technician</td>
-            <td>Sun – Fri</td>
-            <td>8:00 AM – 3:00 PM</td>
-            <td>Lab Room (Ground Floor)</td>
-          </tr>
-          <tr>
-            <td>Pharmacy</td>
-            <td>Pharmacist on Duty</td>
-            <td>Every Day</td>
-            <td>8:00 AM – 6:00 PM</td>
-            <td>Pharmacy Counter</td>
-          </tr>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">General OPD</td><td class="px-4 py-3">Dr. Ram Kumar</td><td class="px-4 py-3">Sun – Fri</td><td class="px-4 py-3">9:00 AM – 4:00 PM</td><td class="px-4 py-3">Room 101</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Gynaecology</td><td class="px-4 py-3">Dr. Sita Sharma</td><td class="px-4 py-3">Sun – Thu</td><td class="px-4 py-3">10:00 AM – 5:00 PM</td><td class="px-4 py-3">Room 202</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Paediatrics</td><td class="px-4 py-3">Dr. Anil Thapa</td><td class="px-4 py-3">Sun – Fri</td><td class="px-4 py-3">9:30 AM – 4:30 PM</td><td class="px-4 py-3">Room 105</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Dental</td><td class="px-4 py-3">Dr. Maya Rai</td><td class="px-4 py-3">Mon – Fri</td><td class="px-4 py-3">11:00 AM – 2:00 PM</td><td class="px-4 py-3">Room 303</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Emergency</td><td class="px-4 py-3">Emergency Doctor</td><td class="px-4 py-3">Every Day</td><td class="px-4 py-3">24 Hours</td><td class="px-4 py-3">Emergency Block</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Laboratory</td><td class="px-4 py-3">Lab Technician</td><td class="px-4 py-3">Sun – Fri</td><td class="px-4 py-3">8:00 AM – 3:00 PM</td><td class="px-4 py-3">Lab Room (Ground Floor)</td></tr>
+          <tr class="hover:bg-blue-50 transition-colors"><td class="px-4 py-3">Pharmacy</td><td class="px-4 py-3">Pharmacist on Duty</td><td class="px-4 py-3">Every Day</td><td class="px-4 py-3">8:00 AM – 6:00 PM</td><td class="px-4 py-3">Pharmacy Counter</td></tr>
         </tbody>
       </table>
     </div>
   </div>
 </section>
 
-<!-- ===================== CONTACT SECTION ===================== -->
-<section class="section-pad" id="contact">
-  <div class="container">
-    <div class="section-label">Find Us</div>
-    <h2 class="section-title">Contact Information</h2>
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="bg-white py-16 px-5">
+  <div class="max-w-6xl mx-auto">
+    <span class="inline-block bg-blue-50 text-hospital-blue text-xs font-bold tracking-widest uppercase px-4 py-1 rounded-full mb-3">Find Us</span>
+    <h2 class="text-4xl font-extrabold text-hospital-dark mb-8">Contact Information</h2>
 
-    <div class="contact-grid">
-
-      <div class="contact-info">
-        <h3>Hospital Details</h3>
-        <ul class="contact-list">
-          <li>📍 <strong>Address:</strong> Itahari, Sunsari, Nepal</li>
-          <li>📞 <strong>Phone:</strong> <a href="tel:025580100">025-580100</a></li>
-          <li>🚨 <strong>Emergency:</strong> <a href="tel:025580100">025-580100</a> (24/7)</li>
-          <li>📧 <strong>Email:</strong> <a href="mailto:info@itaharihospital.gov.np">info@itaharihospital.gov.np</a></li>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div>
+        <h3 class="text-hospital-dark font-bold text-lg mb-4">Hospital Details</h3>
+        <ul class="divide-y divide-gray-100 mb-7">
+          <li class="py-2 text-sm">📍 <strong>Address:</strong> Itahari, Sunsari, Nepal</li>
+          <li class="py-2 text-sm">📞 <strong>Phone:</strong> <a href="tel:025580100" class="text-hospital-blue font-semibold hover:underline">025-580100</a></li>
+          <li class="py-2 text-sm">🚨 <strong>Emergency:</strong> <a href="tel:025580100" class="text-hospital-blue font-semibold hover:underline">025-580100</a> (24/7)</li>
+          <li class="py-2 text-sm">📧 <strong>Email:</strong> <a href="mailto:info@itaharihospital.gov.np" class="text-hospital-blue font-semibold hover:underline">info@itaharihospital.gov.np</a></li>
         </ul>
 
-        <h3 style="margin-top:24px;">Opening Hours</h3>
-        <ul class="contact-list">
-          <li>🕗 OPD: Sunday – Friday, 9:00 AM – 5:00 PM</li>
-          <li>🕗 Pharmacy: Every Day, 8:00 AM – 6:00 PM</li>
-          <li>🚨 Emergency: 24 Hours, 7 Days a Week</li>
-          <li>🗓️ Closed: Saturday (Emergency open)</li>
+        <h3 class="text-hospital-dark font-bold text-lg mb-4">Opening Hours</h3>
+        <ul class="divide-y divide-gray-100 mb-7">
+          <li class="py-2 text-sm">🕗 OPD: Sunday – Friday, 9:00 AM – 5:00 PM</li>
+          <li class="py-2 text-sm">🕗 Pharmacy: Every Day, 8:00 AM – 6:00 PM</li>
+          <li class="py-2 text-sm">🚨 Emergency: 24 Hours, 7 Days a Week</li>
+          <li class="py-2 text-sm">🗓️ Closed: Saturday (Emergency open)</li>
         </ul>
 
-        <!-- Social media placeholder links -->
-        <h3 style="margin-top:24px;">Follow Us</h3>
-        <div class="social-links">
-          <a href="#" class="social-btn" style="background:#1877f2;">Facebook</a>
-          <a href="#" class="social-btn" style="background:#e4405f;">Instagram</a>
-          <a href="#" class="social-btn" style="background:#1da1f2;">Twitter</a>
+        <h3 class="text-hospital-dark font-bold text-lg mb-3">Follow Us</h3>
+        <div class="flex gap-3 flex-wrap">
+          <a href="#" class="bg-blue-600 hover:opacity-80 text-white font-bold text-sm px-4 py-2 rounded-md transition-opacity">Facebook</a>
+          <a href="#" class="bg-pink-500 hover:opacity-80 text-white font-bold text-sm px-4 py-2 rounded-md transition-opacity">Instagram</a>
+          <a href="#" class="bg-sky-400 hover:opacity-80 text-white font-bold text-sm px-4 py-2 rounded-md transition-opacity">Twitter</a>
         </div>
       </div>
 
-      <!-- Google Map placeholder -->
-      <div class="map-placeholder">
-        <div class="map-box">
-          <span style="font-size:3rem;">🗺️</span>
-          <p>Itahari Government Hospital</p>
-          <p style="font-size:0.9rem;color:#888;">Itahari, Sunsari, Nepal</p>
-          <a href="https://maps.google.com/?q=Itahari+Sunsari+Nepal" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Open in Google Maps</a>
+      <!-- Map placeholder -->
+      <div class="bg-blue-50 border-2 border-dashed border-blue-200 rounded-xl flex items-center justify-center min-h-[280px]">
+        <div class="text-center p-8">
+          <span class="text-6xl block mb-3">🗺️</span>
+          <p class="text-hospital-blue font-semibold mb-1">Itahari Government Hospital</p>
+          <p class="text-gray-400 text-sm mb-5">Itahari, Sunsari, Nepal</p>
+          <a href="https://maps.google.com/?q=Itahari+Sunsari+Nepal" target="_blank"
+             class="inline-block bg-hospital-blue hover:bg-blue-800 text-white font-bold px-6 py-2.5 rounded-md text-sm transition-all hover:-translate-y-0.5">
+            Open in Google Maps
+          </a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer">
-  <div class="footer-grid">
+<footer class="bg-footer-dark text-blue-200">
+  <div class="max-w-6xl mx-auto px-6 py-12 flex flex-wrap gap-9 justify-between">
 
-    <div class="footer-col">
-      <h4>🏥 Itahari Government Hospital</h4>
-      <p>Government-funded hospital providing affordable and quality healthcare to all citizens of Itahari and Sunsari, Nepal.</p>
-      <p style="margin-top:8px;"><strong>🛡️ Bima / Health Insurance Accepted</strong></p>
+    <div class="flex-1 min-w-[180px] max-w-[260px]">
+      <h4 class="text-white font-extrabold text-sm mb-4 pb-2 border-b-2 border-hospital-dark">🏥 Itahari Government Hospital</h4>
+      <p class="text-sm leading-relaxed">Government-funded hospital providing affordable and quality healthcare to all citizens of Itahari and Sunsari, Nepal.</p>
+      <p class="mt-3 text-sm font-bold">🛡️ Bima / Health Insurance Accepted</p>
     </div>
 
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#doctors">Doctors</a></li>
-        <li><a href="#bima">Bima Service</a></li>
-        <li><a href="#token-booking">Token Booking</a></li>
-        <li><a href="#registration">Patient Registration</a></li>
+    <div class="flex-1 min-w-[140px] max-w-[200px]">
+      <h4 class="text-white font-extrabold text-sm mb-4 pb-2 border-b-2 border-hospital-dark">Quick Links</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#home" class="text-blue-300 hover:text-white transition-colors">Home</a></li>
+        <li><a href="#services" class="text-blue-300 hover:text-white transition-colors">Services</a></li>
+        <li><a href="#doctors" class="text-blue-300 hover:text-white transition-colors">Doctors</a></li>
+        <li><a href="#bima" class="text-blue-300 hover:text-white transition-colors">Bima Service</a></li>
+        <li><a href="#token-booking" class="text-blue-300 hover:text-white transition-colors">Token Booking</a></li>
+        <li><a href="#registration" class="text-blue-300 hover:text-white transition-colors">Patient Registration</a></li>
       </ul>
     </div>
 
-    <div class="footer-col">
-      <h4>Emergency Contact</h4>
-      <ul class="footer-links">
-        <li>🚨 Emergency: <a href="tel:025580100">025-580100</a></li>
-        <li>📞 Reception: <a href="tel:025580100">025-580100</a></li>
-        <li>📧 <a href="mailto:info@itaharihospital.gov.np">info@itaharihospital.gov.np</a></li>
+    <div class="flex-1 min-w-[160px] max-w-[220px]">
+      <h4 class="text-white font-extrabold text-sm mb-4 pb-2 border-b-2 border-hospital-dark">Emergency Contact</h4>
+      <ul class="space-y-2 text-sm">
+        <li>🚨 Emergency: <a href="tel:025580100" class="text-blue-300 hover:text-white">025-580100</a></li>
+        <li>📞 Reception: <a href="tel:025580100" class="text-blue-300 hover:text-white">025-580100</a></li>
+        <li>📧 <a href="mailto:info@itaharihospital.gov.np" class="text-blue-300 hover:text-white">info@itaharihospital.gov.np</a></li>
         <li>📍 Itahari, Sunsari, Nepal</li>
       </ul>
     </div>
 
-    <div class="footer-col">
-      <h4>Bima Information</h4>
-      <ul class="footer-links">
-        <li><a href="#bima">How Bima Works</a></li>
-        <li><a href="#bima">Bima Coverage Table</a></li>
-        <li><a href="#bima">Required Documents</a></li>
-        <li><a href="#registration">Register as Patient</a></li>
+    <div class="flex-1 min-w-[140px] max-w-[200px]">
+      <h4 class="text-white font-extrabold text-sm mb-4 pb-2 border-b-2 border-hospital-dark">Bima Information</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#bima" class="text-blue-300 hover:text-white transition-colors">How Bima Works</a></li>
+        <li><a href="#bima" class="text-blue-300 hover:text-white transition-colors">Bima Coverage Table</a></li>
+        <li><a href="#bima" class="text-blue-300 hover:text-white transition-colors">Required Documents</a></li>
+        <li><a href="#registration" class="text-blue-300 hover:text-white transition-colors">Register as Patient</a></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2026 Itahari Government Hospital. All Rights Reserved. | Government of Nepal – Ministry of Health and Population</p>
+  <div class="bg-footer-darker text-center py-4 text-xs text-blue-400">
+    © 2026 Itahari Government Hospital. All Rights Reserved. | Government of Nepal – Ministry of Health and Population
   </div>
 </footer>
 
