@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Calculator</title>
+</head>
+<body>
+
+    <h1>Open the Console (F12)</h1>
+
+    <script>
+        let marks = Number(prompt("Enter your marks:"));
+        let grade;
+
+        switch (true) {
+            case (marks >= 90 && marks <= 100):
+                grade = "A+";
+                break;
+            case (marks >= 80):
+                grade = "A";
+                break;
+            case (marks >= 70):
+                grade = "B";
+                break;
+            case (marks >= 60):
+                grade = "C";
+                break;
+            case (marks >= 50):
+                grade = "D";
+                break;
+            case (marks >= 0):
+                grade = "F";
+                break;
+            default:
+                grade = "Invalid Marks";
+        }
+
+        console.log("Marks:", marks);
+        console.log("Grade:", grade);
+    </script>
+
+</body>
+</html>
